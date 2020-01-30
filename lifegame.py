@@ -15,7 +15,7 @@ class LifeGame():
 
     def nextGeneration(self):
         exist = (self.last_gen > 0)
-        # countsはexistの各セルの周囲8マスのTrueの数を格納する配列
+        # neighborsはexistの各セルの周囲8マスのTrueの数を格納する配列
         neighbors = cv2.filter2D(exist.astype(np.uint8), -1, self.kernel, borderType=cv2.BORDER_CONSTANT)
         birth = (neighbors == self.birth_num)
         survive = ((self.lower_lim <= neighbors) & (neighbors <= self.upper_lim)) & exist
