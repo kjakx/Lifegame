@@ -39,5 +39,5 @@ if __name__ == "__main__":
     size = (100, 100)
     img = np.random.choice([255, 0], size)
     # 実行
-    lg = LifeGame(img)
+    lg = LifeGame(img.astype(np.uint8))
     lg.show()
